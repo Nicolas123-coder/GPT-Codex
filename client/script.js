@@ -1,5 +1,6 @@
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
+import axios from 'axios'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
@@ -86,10 +87,11 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://codex-im0y.onrender.com/', {
+    const response = await fetch('http://localhost:3000/codex', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
@@ -101,7 +103,7 @@ const handleSubmit = async (e) => {
 
     if (response.ok) {
         const data = await response.json();
-        const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
+        const parsedData = data.bot.trim()
 
         typeText(messageDiv, parsedData)
     } else {
