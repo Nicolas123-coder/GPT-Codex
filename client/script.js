@@ -7,6 +7,8 @@ const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
 
+dotenv.config()
+
 function loader(element) {
     element.textContent = ''
 
