@@ -1,13 +1,10 @@
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
-import * as dotenv from 'dotenv'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
-
-dotenv.config()
 
 function loader(element) {
     element.textContent = ''
@@ -93,7 +90,7 @@ const handleSubmit = async (e) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': process.env.OPENAI_API_KEY
+            // 'Authorization': process.env.OPENAI_API_KEY
         },
         body: JSON.stringify({
             prompt: data.get('prompt')
