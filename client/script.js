@@ -87,11 +87,11 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://codex-sspg.onrender.com/', {
+    const response = await fetch('https://codex-sspg.onrender.com/codex/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer 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'
+            'Authorization': 'Bearer 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'
         },
         body: JSON.stringify({
             prompt: data.get('prompt')

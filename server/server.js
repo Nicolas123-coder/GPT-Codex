@@ -7,7 +7,7 @@ import axios from 'axios'
 dotenv.config()
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 
 const openai = new OpenAIApi(configuration);
